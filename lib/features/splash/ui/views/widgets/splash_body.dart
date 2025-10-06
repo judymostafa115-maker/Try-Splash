@@ -66,5 +66,5 @@ class _SplashBodyState extends State<SplashBody>with TickerProviderStateMixin {
     }),
     );
 
-  }
+  }//
 }
