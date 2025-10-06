@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trysplash/core/resources/app_colors.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -6,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: AppColors.primaraycolor,
       ),
     );
   }
