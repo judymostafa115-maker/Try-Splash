@@ -11,13 +11,13 @@ class BookItemListview extends StatelessWidget {
     return BlocBuilder<AllBooksCubit,AllBooksState>(
         builder: (context,state) {
       if(state is AllBooksSuccessState){
-        SizedBox(
+        return SizedBox(
 
         height: 224,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemBuilder: (context,index){
-              return BookItem(bookModel: state.books[index],);
+              return BookItem(bookModel: state.books[index],imageWidth: 150,);
             },
             itemCount: state.books.length,
           ),

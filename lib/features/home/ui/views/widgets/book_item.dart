@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:trysplash/features/home/data/model/book_model.dart';
 class BookItem extends StatelessWidget {
-  const BookItem({super.key, required this.bookModel});
+  const BookItem({super.key, required this.bookModel, required this.imageWidth});
   final BookModel bookModel;
+
+  final double imageWidth;
   @override
   Widget build(BuildContext context) {
     return  Container(
       margin: EdgeInsets.symmetric(horizontal: 7),
-        width:120 ,
-        height: 224,
+         width:120 ,
+         height: 224,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(40),
             image: DecorationImage(

@@ -11,19 +11,18 @@ class BookcategoryListview extends StatelessWidget {
     return BlocBuilder<FreeBooksCubit,FreeBooksState>(
         builder: (context,state){
           if(state is FreeBooksSuccessState){
-            Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemBuilder: (context,index){
-                  return BookCategory(bookModel:state.books[index]);
-                },
-                itemCount: 5
-              ),
-            );
+           return SliverList(
+             delegate: SliverChildBuilderDelegate(
+                 (context, index) {
+               return BookCategory(bookModel: state.books[index]);
+             },
+             childCount: state.books.length,
+           ),
+           );
           }else if(state is FreeBooksErrorState){
-            return  Text("Error${state.errorMessage}");
+            return  SliverToBoxAdapter(child: Text("Error${state.errorMessage}"));
           }
-          return Center(child: CircularProgressIndicator());
+          return SliverToBoxAdapter(child:Center(child: CircularProgressIndicator()));
 
         });
   }
